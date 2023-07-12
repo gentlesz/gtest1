@@ -3,6 +3,38 @@
 <head>
   <title>Embedded Content Example</title>
   <style>
+   .header {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+  
+      .header img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        animation: slideImages 8s infinite;
+      }
+  
+      @keyframes slideImages {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        33% {
+          opacity: 1;
+        }
+        43% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }  
   body {
     background-image: url('bleh');
     background-repeat: no-repeat;
@@ -18,6 +50,10 @@
 </head>
 <body>
   <h1>Embedded Content</h1>
+  <div class="header">
+  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/1/1.jpg" alt="Image 1">
+  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/84/1.jpg" alt="Image 2">
+  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/54/1.jpg" alt="Image 3">
   <div class="container">
     <iframe src="https://mint-final.glitch.me/" width="500" height="500" frameborder="50"></iframe>
   </div>
