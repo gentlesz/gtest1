@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Embedded Content Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.css">
   <style>
     html, body {
       margin: 0;
@@ -14,20 +16,19 @@
       font-size: 48px;
     }
     body {
-/*       background-image: url('https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/10/1.jpg'); */
       animation: backgroundLoop 3s infinite;
-/*       background-repeat: no-repeat; */
       background-repeat: repeat-y;
       background-size: cover;
     }
     .container {
       display: flex;
       justify-content: center;
-      top: 900px;
+/*       justify-content: flex-center; */
 /*       align-items: center; */
+      top: 1500px;
       height: 100vh;
       position: relative;
-      z-index: 0;
+      z-index: 2;
     }
     .text-block {
       text-align: center;
@@ -52,6 +53,92 @@
         background-image: url('https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/430-1.gif');
       }
     }
+    
+    .carousel-item img {
+      object-fit: cover;
+      width: 100%;
+      height: 300px;
+    }
+    .grid {
+      display: grid;
+      grid-gap: 0px;
+      grid-template-columns: repeat(1, 10fr);
+      position: fixed;
+/*       position: absolute; */
+      top: 0; /* Position the grid at the top */
+      left: 0; /* Position the grid at the extreme left */
+      width: 100%;
+      padding: 10px; /* Add some padding to the grid */
+      box-sizing: border-box; /* Include padding in the width */
+      z-index: 999;
+      opacity: 1; /* Initial opacity */
+      transition: opacity 0.5s; /* Smooth transition for opacity */
+    }
+    .grid-item {
+      width: 100%;
+    }
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+    }
+    .gridR {
+      display: grid;
+      grid-gap: 0px;
+      grid-template-columns: repeat(1, 10fr);
+      position: fixed;
+/*       position: absolute; */
+      top: 0; /* Position the grid at the top */
+/*       width: 100%; */
+      padding: 10px; /* Add some padding to the grid */
+      box-sizing: border-box; /* Include padding in the width */
+      right: 0; /* Position the grid at the extreme left */
+      z-index: 999;
+      opacity: 1; /* Initial opacity */
+      transition: opacity 0.5s; /* Smooth transition for opacity */
+    }
+    .grid-itemr {
+      width: 100%;
+    }
+    .grid-itemr img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+    }
+    
+    @media (max-width: 1000px) {
+      .grid-item img {
+        max-width: 100px;
+      }
+      .grid-itemr img {
+        max-width: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid-item img {
+        max-width: 50px;
+      }
+      .grid-itemr img {
+        max-width: 50px;
+      }
+    }
+    .social-button {
+      display: block;
+      position: fixed;
+      bottom: 20px; /* Adjust the distance from the bottom as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: grey;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .social-button:hover {
+      background-color: black;
+    }
   </style>
 </head>
 <body>
@@ -65,11 +152,116 @@
     <p>This is the text block below the container.</p>
     <p>This is the text block below the container.</p>
     <p>This is the text block below the container.</p>
-    <p>This is the text block below the container.</p>
-    
+    <p>This is the text block below the container.</p> 
   </div>
   <div class="container">
     <iframe src="https://mint-final.glitch.me/" width="500" height="500" frameborder="50"></iframe>
     </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a1.png" alt="Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a2.png" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a3.png" alt="Image 3">
+      </div>
+      <div class="carousel-item">
+        <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a4.png" alt="Image 4">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  <div class="grid" id="grid">
+    <div class="grid-item">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a6.png" alt="Image 1">
+    </div>
+    <div class="grid-item">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a7.png" alt="Image 2">
+    </div>
+    <div class="grid-item">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a8.png" alt="Image 3">
+    </div>
+    <div class="grid-item">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a9.png" alt="Image 4">
+    </div>
+    <div class="grid-item">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a10.png" alt="Image 4">
+    </div>
+  </div>
+  <div class="gridR" id="gridR">
+    <div class="grid-itemr">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a11.png" alt="Image 4">
+    </div>
+    <div class="grid-itemr">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a12.png" alt="Image 4">
+    </div>
+    <div class="grid-itemr">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a13.png" alt="Image 4">
+    </div>
+    <div class="grid-itemr">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a14.png" alt="Image 4">
+    </div>
+    <div class="grid-itemr">
+      <img src="https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/a15.png" alt="Image 4">
+    </div>
+  <a href="https://twitter.com" target="_blank" class="social-button">
+  <i class="fab fa-twitter"></i> Follow us on Twitter
+  </a>
+  </div>
+  <script>  
+    window.addEventListener('scroll', function() {
+    var grid = document.getElementById('grid');
+    var scrollHeight = window.pageYOffset; /* Get the scroll height */
+
+    // Calculate the opacity based on scroll position
+    var maxOpacity = 1;
+    var minOpacity = 0;
+    var maxScrollHeight = 5000; // Adjust this value as needed
+    var opacity = 1 - (scrollHeight / maxScrollHeight);
+
+    // Ensure opacity is within the valid range
+    opacity = Math.max(opacity, minOpacity);
+    opacity = Math.min(opacity, maxOpacity);
+
+    // Apply the opacity to the grid
+    grid.style.opacity = opacity.toFixed(2);
+  });
+    
+    window.addEventListener('scroll', function() {
+    var grid = document.getElementById('gridR');
+    var scrollHeight = window.pageYOffset; /* Get the scroll height */
+
+    // Calculate the opacity based on scroll position
+    var maxOpacity = 1;
+    var minOpacity = 0;
+    var maxScrollHeight = 5000; // Adjust this value as needed
+    var opacity = 1 - (scrollHeight / maxScrollHeight);
+
+    // Ensure opacity is within the valid range
+    opacity = Math.max(opacity, minOpacity);
+    opacity = Math.min(opacity, maxOpacity);
+
+    // Apply the opacity to the grid
+    grid.style.opacity = opacity.toFixed(2);
+  });
+  </script>
 </body>
 </html>
