@@ -3,59 +3,73 @@
 <head>
   <title>Embedded Content Example</title>
   <style>
-   .header {
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    h1 {
+      text-align: center;
+      font-family: "Comic Sans MS", cursive;
+      font-size: 48px;
+    }
+    body {
+/*       background-image: url('https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/10/1.jpg'); */
+      animation: backgroundLoop 3s infinite;
+/*       background-repeat: no-repeat; */
+      background-repeat: repeat-y;
+      background-size: cover;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      top: 900px;
+/*       align-items: center; */
+      height: 100vh;
+      position: relative;
+      z-index: 0;
+    }
+    .text-block {
+      text-align: center;
+      color: black;
+      margin-top: auto;
+      margin-bottom: 10px;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    @keyframes backgroundLoop {
+      0% {
+        background-image: url('https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/142-1.gif');
       }
-  
-      .header img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        animation: slideImages 8s infinite;
+      33.33% {
+        background-image: url('https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/142-2.gif');
       }
-  
-      @keyframes slideImages {
-        0% {
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        33% {
-          opacity: 1;
-        }
-        43% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 0;
-        }
-      }  
-  body {
-    background-image: url('bleh');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+      66.66% {
+        background-image: url('https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/142-3.gif');
+      }
+      100% {
+        background-image: url('https://ipfs.io/ipfs/bafybeieak4tjqvngswtysu2lqvokw5f7iz2w4qygille3764vk3edlrif4/430-1.gif');
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Embedded Content</h1>
-  <div class="header">
-  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/1/1.jpg" alt="Image 1">
-  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/84/1.jpg" alt="Image 2">
-  <img src="https://ipfs.io/ipfs/bafybeidujqmdovfoq4ymhmowd6ar6qs7fgei2bvd5ypzbuqol24opkjge4/54/1.jpg" alt="Image 3">
+  <div class="text-block">
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    <p>This is the text block below the container.</p>
+    
+  </div>
   <div class="container">
     <iframe src="https://mint-final.glitch.me/" width="500" height="500" frameborder="50"></iframe>
-  </div>
+    </div>
 </body>
 </html>
